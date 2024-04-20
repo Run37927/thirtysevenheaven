@@ -1,7 +1,8 @@
-import { Inter } from "next/font/google";
+import { Mulish } from 'next/font/google'
 import "./globals.css";
+import { cn } from '@/lib/utils';
 
-const inter = Inter({ subsets: ["latin"] });
+const mulish = Mulish({ subsets: ['latin'] });
 
 export const metadata = {
   title: "Create Next App",
@@ -10,8 +11,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className='light'>
+      <body className={cn('min-h-screen font-sans antialiased', mulish.className)}>
+
+        {children}
+      </body>
     </html>
   );
 }
