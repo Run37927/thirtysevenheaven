@@ -1,4 +1,3 @@
-'use client'
 import React from 'react'
 import Link from "next/link"
 import MaxWidthWrapper from "./MaxWidthWrapper"
@@ -20,7 +19,6 @@ function Navbar() {
                     <div className='hidden items-center space-x-1.5 sm:flex'>
                         <>
                             <div
-                                onClick={() => { }}
                                 className={cn(buttonVariants({
                                     variant: "ghost",
                                     size: "sm",
@@ -29,7 +27,6 @@ function Navbar() {
                             </div>
 
                             <div
-                                onClick={() => { }}
                                 className={cn(buttonVariants({
                                     variant: "ghost",
                                     size: "sm",
@@ -38,14 +35,12 @@ function Navbar() {
                             </div>
 
                             <div
-                                onClick={() => { }}
                                 className={cn(buttonVariants({
                                     variant: "ghost",
                                     size: "sm",
                                 }), "cursor-pointer")}>
                                 <Github className='h-4 w-4' />
                             </div>
-
 
                             <Link href='/sign-in' className={cn(buttonVariants({ size: "sm" }), "flex items-center justify-center group px-4")}>
                                 <span>Sign in</span>
