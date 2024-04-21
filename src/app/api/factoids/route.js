@@ -32,7 +32,7 @@ export async function GET(req) {
 
         return new Response(JSON.stringify(factoids));
     } catch (error) {
-        console.log(error)
+        // console.log(error)
         if (error instanceof z.ZodError) {
             return new Response('Invalid post request data passed', { status: 422 });
         }
