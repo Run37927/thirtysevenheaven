@@ -1,8 +1,12 @@
+import Form from '@/components/Form'
+import MaxWidthWrapper from '@/components/MaxWidthWrapper'
 import React from 'react'
 
 function page() {
     return (
-        <div>page</div>
+        <MaxWidthWrapper>
+            <Form />
+        </MaxWidthWrapper>
     )
 }
 
