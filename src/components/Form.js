@@ -35,7 +35,8 @@ function Form() {
             console.log("data we get back on successfully submitting a post", data);
             const postId = data.id;
             if (postId) {
-                router.replace(`/factoids/${postId}`);
+                // router.replace(`/factoids/${postId}`);
+                router.replace('/')
                 toast({
                     variant: 'success',
                     title: "Your factoid has been submitted!",
