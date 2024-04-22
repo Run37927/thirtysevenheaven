@@ -12,7 +12,7 @@ const websiteIntro = {
 
 function Sidebar({ session }) {
     return (
-        <div className="w-1/3 ml-4 sticky top-16 space-y-4">
+        <div className="mb-4 md:mb-0 md:w-1/3 md:ml-4 md:sticky top-16 space-y-4">
             <div className="bg-white shadow-sm rounded-lg p-4 border border-zinc-100">
                 <div className="space-y-2 text-center">
                     <h3 className="text-xl font-semibold">{websiteIntro.title}</h3>

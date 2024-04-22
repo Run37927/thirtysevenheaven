@@ -35,7 +35,7 @@ function InfiniteCards({ initialCards }) {
     }, [entry, fetchNextPage]);
 
     return (
-        <div className="flex flex-col w-2/3 space-y-4">
+        <div className="flex flex-col md:w-2/3 space-y-4">
             {factoidCards.map((factoid, index) => {
                 if (index === factoidCards.length - 1) {
                     return (

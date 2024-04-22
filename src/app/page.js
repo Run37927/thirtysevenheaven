@@ -27,9 +27,9 @@ export default async function Home() {
   if (!initialCards.length) return notFound();
 
   return (
-    <MaxWidthWrapper className="mb-12 mt-8 flex items-start justify-center">
-      <InfiniteCards initialCards={initialCards} />
-      <Sidebar session={session} />
+    <MaxWidthWrapper className="mb-12 mt-8 flex flex-col md:flex-row-reverse md:items-start md:justify-center">
+      <Sidebar session={session} className="order-1 md:order-2" />
+      <InfiniteCards initialCards={initialCards} className="order-2 md:order-1" />
     </MaxWidthWrapper>
   );
 }
