@@ -1,5 +1,5 @@
 'use client'
-import { LayoutDashboard, LogOutIcon, User } from 'lucide-react';
+import { LayoutDashboard, LineChart, LogOutIcon, User } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react'
@@ -37,6 +37,9 @@ function UserAccountNav({ session }) {
                         <div className='flex-1 min-w-0'>
                             <p className='text-sm font-semibold'>{session.user.name}</p>
                             <p className='text-xs text-ellipsis overflow-hidden'>{session.user.email}</p>
+                            {session.user.role === 'admin' ? (
+                                <p className='text-xs font-semibold rounded-md py-1 mt-1 text-green-800 bg-green-500 bg-opacity-20 max-w-12 text-center'>Admin</p>
+                            ) : null}
                         </div>
                     </div>
 
@@ -55,6 +58,13 @@ function UserAccountNav({ session }) {
                             </Link>
                         </div>
 
+                        {session.user.role === 'admin' ? (
+                            <div className='hover:bg-gray-100 rounded-md px-4 py-2'>
+                                <div className='flex items-center'>
+                                    <LineChart className='h-4 w-4 mr-2' />
+                                    <p className='text-sm'>Analytics</p>
+                                </div>
+                            </div>) : null}
 
                         <div className='hover:bg-gray-100 rounded-md px-4 py-2' onClick={() => signOut()}>
                             <div className='flex items-center'>
@@ -62,6 +72,7 @@ function UserAccountNav({ session }) {
                                 <p className='text-sm'>Sign out</p>
                             </div>
                         </div>
+
                     </div>
                 </div>
 

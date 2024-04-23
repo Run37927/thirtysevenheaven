@@ -6,6 +6,7 @@ import { buttonVariants } from './ui/button'
 import { cn } from '@/lib/utils'
 import { getAuthSession } from '@/lib/auth'
 import UserAccountNav from './UserAccountNav'
+import Image from 'next/image'
 
 async function Navbar() {
     const session = await getAuthSession();
@@ -15,7 +16,8 @@ async function Navbar() {
             <MaxWidthWrapper>
                 <div className='flex h-14 items-center justify-between border-b border-zinc-200'>
                     <Link href='/' className='flex z-40 font-semibold text-lg'>
-                        <span>3️⃣7️⃣Heaven</span>
+                        <Image src='/tsheaven.png' alt='37heaven logo' width={30} height={30} />
+                        <span>Heaven</span>
                     </Link>
 
                     {/* TODO: add mobile navbar */}
