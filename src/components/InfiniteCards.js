@@ -44,12 +44,25 @@ function InfiniteCards({ initialCards }) {
                                 <p className="font-semibold text-xl">{factoid.description}</p>
                                 <p className="mt-6">{factoid.note}</p>
                                 <div className="flex items-center space-x-2 text-xs mt-8">
-                                    <span className="font-semibold">- {factoid.author.name}</span>
+                                    {/* <span className="font-semibold">- {factoid.author.name}</span> */}
+                                    <span className="font-semibold">- Tom Magliery</span>
                                     <span>•</span>
                                     <span>{formatTimeToNow(new Date(factoid.createdAt))}</span>
                                 </div>
 
-                                <div className="flex items-center justify-between mt-6">
+                                <div className='overflow-x-auto'>
+                                    <div className="flex gap-3">
+                                        {factoid.categories.map(item => {
+                                            return (
+                                                <div key={item.id} className='cursor-pointer bg-gray-200 hover:opacity-75 rounded-lg mb-2 mt-4 py-1 px-3 inline-block whitespace-nowrap'>
+                                                    <p className='text-xs'>{item.value}</p>
+                                                </div>
+                                            )
+                                        })}
+                                    </div>
+                                </div>
+
+                                <div className="flex items-center justify-between mt-2">
                                     <div
                                         className="cursor-pointer flex items-center justify-center gap-1">
                                         <Heart className='h-5 w-5 hover:text-red-500' />
@@ -89,12 +102,25 @@ function InfiniteCards({ initialCards }) {
                             <p className="font-semibold text-xl">{factoid.description}</p>
                             <p className="mt-6">{factoid.note}</p>
                             <div className="flex items-center space-x-2 text-xs mt-8">
-                                <span className="font-semibold">- {factoid.author.name}</span>
+                                {/* <span className="font-semibold">- {factoid.author.name}</span> */}
+                                <span className="font-semibold">- Tom Magliery</span>
                                 <span>•</span>
                                 <span>{formatTimeToNow(new Date(factoid.createdAt))}</span>
                             </div>
 
-                            <div className="flex items-center justify-between mt-6">
+                            <div className='overflow-x-auto'>
+                                <div className="flex gap-3">
+                                    {factoid.categories.map(item => {
+                                        return (
+                                            <div key={item.id} className='cursor-pointer bg-gray-200 hover:opacity-75 rounded-lg mb-2 mt-4 py-1 px-3 inline-block whitespace-nowrap'>
+                                                <p className='text-xs'>{item.name}</p>
+                                            </div>
+                                        )
+                                    })}
+                                </div>
+                            </div>
+
+                            <div className="flex items-center justify-between mt-2">
                                 <div
                                     className="cursor-pointer flex items-center justify-center gap-1">
                                     <Heart className='h-5 w-5 hover:text-red-500' />

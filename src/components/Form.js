@@ -30,11 +30,17 @@ function Form() {
         },
         onError: (error) => {
             console.error("error submitting a post", error);
+            toast({
+                variant: "destructive",
+                title: "Uh oh! Something went wrong.",
+                description: "There was an error submitting your factoid. Please try again."
+            })
         },
         onSuccess: (data) => {
             console.log("data we get back on successfully submitting a post", data);
             const postId = data.id;
             if (postId) {
+                //TODO: uncomment this after building out the detail page
                 // router.replace(`/factoids/${postId}`);
                 router.replace('/')
                 toast({
