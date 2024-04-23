@@ -15,10 +15,14 @@ async function Navbar() {
         <nav className="sticky h-14 inset-x-0 top-0 z-30 w-full border-b border-gray-200 bg-white/75 backdrop-blur-sm transition-all">
             <MaxWidthWrapper>
                 <div className='flex h-14 items-center justify-between border-b border-zinc-200'>
-                    <Link href='/' className='flex z-40 font-semibold text-lg'>
-                        <Image src='/tsheaven.png' alt='37heaven logo' width={30} height={30} />
-                        <span>Heaven</span>
-                    </Link>
+                    <div className='flex items-center justify-center'>
+                        <Link href='/' className='flex z-40 font-semibold text-lg'>
+                            <Image src='/tsheaven.png' alt='37heaven logo' width={30} height={30} />
+                            <span>Heaven</span>
+                        </Link>
+                        <Link href={session.user ? '/submit' : 'sign-in'} className={cn(buttonVariants({ size: "sm", variant: "ghost" }), "ml-2 text-zinc-700")}>Submit</Link>
+                        <Link href='/blog' className={cn(buttonVariants({ size: "sm", variant: "ghost" }), "ml-2 text-zinc-700")}>Blog</Link>
+                    </div>
 
                     {/* TODO: add mobile navbar */}
 
