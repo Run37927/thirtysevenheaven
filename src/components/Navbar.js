@@ -20,7 +20,7 @@ async function Navbar() {
                             <Image src='/tsheaven.png' alt='37heaven logo' width={30} height={30} />
                             <span>Heaven</span>
                         </Link>
-                        <Link href={session.user ? '/submit' : 'sign-in'} className={cn(buttonVariants({ size: "sm", variant: "ghost" }), "ml-2 text-zinc-700")}>Submit</Link>
+                        <Link href={session?.user ? '/submit' : 'sign-in'} className={cn(buttonVariants({ size: "sm", variant: "ghost" }), "ml-2 text-zinc-700")}>Submit</Link>
                         <Link href='/blog' className={cn(buttonVariants({ size: "sm", variant: "ghost" }), "ml-2 text-zinc-700")}>Blog</Link>
                     </div>
 
