@@ -85,14 +85,15 @@ function UserAccountNav({ session }) {
             className='relative'
             onClick={toggleDropDownMenu}
         >
-            <Image
+            <div className="w-7 h-7 cursor-pointer rounded-full bg-gradient-to-r from-pink-300 via-purple-300 to-blue-300 mr-2"></div>
+            {/* <Image
                 width={28}
                 height={28}
                 className='w-full rounded-full hover:opacity-85 cursor-pointer'
                 src={session?.user?.image}
                 alt='profile pic'
                 referrerPolicy='no-referrer'
-            />
+            /> */}
             {showDropdown && showDropDownMenu()}
         </div>
     )
