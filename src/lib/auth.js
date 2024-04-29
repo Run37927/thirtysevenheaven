@@ -39,7 +39,7 @@ export const authOptions = {
                 },
             })
 
-            console.log("user", user)
+            // console.log("user", user)
 
             // Ensure we have a user object before proceeding
             if (user) {
@@ -84,7 +84,6 @@ export async function getAuthSession() {
             });
 
             if (user) {
-                console.log("found user: ", user);
                 session.user.id = user.id;
                 session.user.role = user.role;
             }

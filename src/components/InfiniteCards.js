@@ -26,7 +26,7 @@ function InfiniteCards({ initialCards }) {
     })
 
     const factoidCards = data?.pages.flatMap(page => page) ?? initialCards;
-    console.log(factoidCards);
+    // console.log(factoidCards);
 
     useEffect(() => {
         if (entry?.isIntersecting) {
@@ -39,8 +39,8 @@ function InfiniteCards({ initialCards }) {
             {factoidCards.map((factoid, index) => {
                 if (index === factoidCards.length - 1) {
                     return (
-                        <>
-                            <div ref={ref} key={factoid.id} className="bg-white shadow-sm rounded-lg px-6 py-8 border border-zinc-100">
+                        <React.Fragment key={factoid.id}>
+                            <div ref={ref} className="bg-white shadow-sm rounded-lg px-6 py-8 border border-zinc-100">
                                 <p className="font-semibold text-xl">{factoid.description}</p>
                                 <p className="mt-6">{factoid.note}</p>
                                 <div className="flex items-center space-x-2 text-xs mt-8">
@@ -89,7 +89,7 @@ function InfiniteCards({ initialCards }) {
                                     <Loader2 className='h=10 w-10 animate-spin text-center mx-auto' />
                                 </div>
                             )}
-                        </>
+                        </React.Fragment>
                     )
                 } else {
                     return (
