@@ -5,6 +5,7 @@ import { useInfiniteQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { Flag, Heart, Loader2, Share2 } from 'lucide-react';
 import React, { useEffect } from 'react'
+import Report from './Report';
 
 function InfiniteCards({ initialCards }) {
     const { ref, entry } = useIntersection({
@@ -134,11 +135,7 @@ function InfiniteCards({ initialCards }) {
                                         <p>Share</p>
                                     </div>
 
-                                    <div
-                                        className="cursor-pointer flex items-center justify-center gap-1 text-red-500 hover:opacity-75">
-                                        <Flag className='h-5 w-5' />
-                                        <p>Report</p>
-                                    </div>
+                                    <Report />
                                 </div>
                             </div>
                         </div>
