@@ -120,11 +120,11 @@ function Form() {
                     <button
                         type="submit"
                         disabled={isPending}
-                        className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-zinc-900 hover:bg-zinc-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-500"
+                        className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm font-medium text-white bg-zinc-800 hover:bg-zinc-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-500"
                     >
                         {isPending ? <div className='flex items-center justify-center'>
                             <Loader2 className='h-5 w-5 animate-spin text-center' />
-                            <p>Submitting...</p>
+                            <p className='text-xl'>Submitting...</p>
                         </div>
                             : 'Submit'
                         }

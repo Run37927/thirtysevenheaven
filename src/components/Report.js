@@ -59,7 +59,7 @@ function Report() {
                     <div>
                         <TextareaAutosize
                             className='w-full resize-none appearance-none overflow-hidden min-h-[4rem] border-none bg-gray-200/30 rounded text-sm focus:ring-0 focus:outline-none mt-2 px-2 pt-1'
-                            placeholder='enter reason here'
+                            placeholder='Enter reason here'
                             value={customReason}
                             onChange={(event) => { setCustomReason(event.target.value) }}
                         />
@@ -67,7 +67,7 @@ function Report() {
                     <button
                         type='submit'
                         disabled={isPending || (!reason && !customReason)}
-                        className={`w-full flex justify-center py-2 px-4 mt-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-zinc-900 hover:bg-zinc-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-500 ${isPending || (!reason && !customReason) ? 'cursor-not-allowed' : ''}`}
+                        className={`w-full flex justify-center py-2 px-4 mt-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-zinc-800 hover:bg-zinc-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-500 ${isPending || (!reason && !customReason) ? 'cursor-not-allowed' : ''}`}
                     >
                         {isPending ?
                             <div className='flex items-center justify-center'>
