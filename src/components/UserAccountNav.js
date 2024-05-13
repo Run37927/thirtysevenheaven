@@ -85,7 +85,7 @@ function UserAccountNav({ session }) {
             className='relative'
             onClick={toggleDropDownMenu}
         >
-            <div className="w-7 h-7 cursor-pointer rounded-full bg-gradient-to-r from-pink-300 via-purple-300 to-blue-300 mr-2"></div>
+            <div className="w-7 h-7 cursor-pointer rounded-full bg-gradient-to-r from-pink-300 via-purple-300 to-blue-300 ml-1 mr-2"></div>
             {/* <Image
                 width={28}
                 height={28}

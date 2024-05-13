@@ -1,12 +1,13 @@
 import React from 'react'
 import Link from "next/link"
 import MaxWidthWrapper from "./MaxWidthWrapper"
-import { ArrowRight, Sun, Bell, Github } from 'lucide-react'
+import { ArrowRight, Bell } from 'lucide-react'
 import { buttonVariants } from './ui/button'
 import { cn } from '@/lib/utils'
 import { getAuthSession } from '@/lib/auth'
 import UserAccountNav from './UserAccountNav'
 import Image from 'next/image'
+import { FaGithub } from "react-icons/fa";
 
 async function Navbar() {
     const session = await getAuthSession();
@@ -21,7 +22,6 @@ async function Navbar() {
                             <span>Heaven</span>
                         </Link>
                         <Link href={session?.user ? '/submit' : 'sign-in'} className={cn(buttonVariants({ size: "sm", variant: "ghost" }), "ml-2 text-zinc-700")}>Submit</Link>
-                        <Link href='/blog' className={cn(buttonVariants({ size: "sm", variant: "ghost" }), "ml-2 text-zinc-700")}>Blog</Link>
                     </div>
 
                     {/* TODO: add mobile navbar */}
@@ -36,21 +36,13 @@ async function Navbar() {
                                 <Bell className='h-4 w-4' />
                             </div>
 
-                            <div
+                            <a href='https://github.com/Run37927/thirtysevenheaven' target='_blank' rel='noopener noreferrer'
                                 className={cn(buttonVariants({
                                     variant: "ghost",
                                     size: "sm",
                                 }), "cursor-pointer")}>
-                                <Sun className='h-4 w-4' />
-                            </div>
-
-                            <div
-                                className={cn(buttonVariants({
-                                    variant: "ghost",
-                                    size: "sm",
-                                }), "cursor-pointer")}>
-                                <Github className='h-4 w-4' />
-                            </div>
+                                <FaGithub className='h-4 w-4' />
+                            </a>
 
                             {session?.user ? (
                                 <UserAccountNav session={session} />

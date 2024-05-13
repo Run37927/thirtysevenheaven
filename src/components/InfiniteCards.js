@@ -6,6 +6,7 @@ import axios from 'axios';
 import { Flag, Heart, Loader2, Share2 } from 'lucide-react';
 import React, { useEffect } from 'react'
 import Report from './Report';
+import { FaHeart } from "react-icons/fa";
 
 function InfiniteCards({ initialCards }) {
     const { ref, entry } = useIntersection({
@@ -27,7 +28,7 @@ function InfiniteCards({ initialCards }) {
     })
 
     const factoidCards = data?.pages.flatMap(page => page) ?? initialCards;
-    // console.log(factoidCards);
+    console.log(factoidCards);
 
     useEffect(() => {
         if (entry?.isIntersecting) {
@@ -56,7 +57,7 @@ function InfiniteCards({ initialCards }) {
                                         {factoid.categories.map(item => {
                                             return (
                                                 <div key={item.id} className='cursor-pointer bg-gray-200 hover:opacity-75 rounded-lg mb-2 mt-4 py-1 px-3 inline-block whitespace-nowrap'>
-                                                    <p className='text-xs'>{item.value}</p>
+                                                    <p className='text-xs'>{item.name}</p>
                                                 </div>
                                             )
                                         })}
@@ -66,7 +67,7 @@ function InfiniteCards({ initialCards }) {
                                 <div className="flex items-center justify-between mt-2">
                                     <div
                                         className="cursor-pointer flex items-center justify-center gap-1">
-                                        <Heart className='h-5 w-5 hover:text-red-500' />
+                                        <FaHeart className='h-5 w-5 text-red-500' />
                                         <p>1</p>
                                     </div>
 
