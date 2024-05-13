@@ -9,14 +9,12 @@ function Report() {
     const [reason, setReason] = useState("");
     const [customReason, setCustomReason] = useState("");
     const [showReportModal, setShowReportModal] = useState(false);
-    const postUrl = window.location.href;
 
     const { mutate: submitReport, isPending } = useMutation({
         mutationFn: async ({ reason, customReason }) => {
             return axios.post("/api/reportPost", {
                 reason,
                 customReason,
-                postUrl,
             });
         },
         onSuccess: () => {
