@@ -48,7 +48,7 @@ async function Navbar() {
                             {session?.user ? (
                                 <UserAccountNav session={session} />
                             ) : (
-                                <Link href='/sign-in' className={cn(buttonVariants({ size: "sm" }), "flex items-center justify-center group px-4")}>
+                                <Link href='/sign-in' className={cn(buttonVariants({ size: "sm" }), "flex items-center justify-center group px-4 bg-zinc-800 hover:bg-zinc-950")}>
                                     <span>Sign in</span>
                                     <ArrowRight className='ml-1.5 transform h-4 w-4 transition-transform duration-300 group-hover:translate-x-1' />
                                 </Link>
