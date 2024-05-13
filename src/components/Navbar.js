@@ -8,6 +8,7 @@ import { getAuthSession } from '@/lib/auth'
 import UserAccountNav from './UserAccountNav'
 import Image from 'next/image'
 import { FaGithub } from "react-icons/fa";
+import { FaBell } from "react-icons/fa6";
 
 async function Navbar() {
     const session = await getAuthSession();
@@ -33,7 +34,7 @@ async function Navbar() {
                                     variant: "ghost",
                                     size: "sm",
                                 }), "cursor-pointer")}>
-                                <Bell className='h-4 w-4' />
+                                <FaBell className='h-4 w-4' />
                             </div>
 
                             <a href='https://github.com/Run37927/thirtysevenheaven' target='_blank' rel='noopener noreferrer'
