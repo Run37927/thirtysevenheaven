@@ -67,7 +67,7 @@ function InfiniteCards({ initialCards }) {
                                 <div className="flex items-center justify-between mt-2">
                                     <div
                                         className="cursor-pointer flex items-center justify-center gap-1">
-                                        <FaHeart className='h-5 w-5 text-red-500' />
+                                        <FaHeart className='h-5 w-5 text-red-500 hover:scale-125 hover:rotate-6 transition-transform duration-200' />
                                         <p>1</p>
                                     </div>
 
