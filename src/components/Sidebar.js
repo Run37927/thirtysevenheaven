@@ -46,7 +46,7 @@ function Sidebar({ session }) {
             <div className="bg-white shadow-sm rounded-lg p-4 border border-zinc-100">
                 <div className="flex items-center justify-between">
                     <p className="text-lg font-semibold">Browse categories</p>
-                    <ChevronDown className='h-4 w-4' />
+                    {/* <ChevronDown className='h-4 w-4' /> */}
                 </div>
                 <div className="flex flex-wrap gap-2 mt-4">
                     {categories.map((category, index) => (
