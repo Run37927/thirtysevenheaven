@@ -11,7 +11,8 @@ import { useToast } from './ui/use-toast';
 import { useRouter } from 'next/navigation';
 
 function FactoidCard({ factoid }) {
-    const [likeCount, setLikeCount] = useState(factoid.votes?.length ?? 1);
+    console.log(factoid)
+    const [likeCount, setLikeCount] = useState(factoid.votes?.length ?? 0);
     const { toast } = useToast();
     const router = useRouter();
 
@@ -23,7 +24,7 @@ function FactoidCard({ factoid }) {
         onError: (error) => {
             console.log("voting error: ", error.response?.data);
             toast({
-                variant: "destructive",
+                variant: "default",
                 title: error.response.data ?? "Please try again later."
             });
             setLikeCount(prev => prev - 1);

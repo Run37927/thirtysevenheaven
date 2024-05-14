@@ -25,6 +25,7 @@ export async function GET(req) {
                     },
                 },
                 categories: true,
+                votes: true,
             },
             take: parseInt(limit),
             skip: (parseInt(page) - 1) * parseInt(limit),
