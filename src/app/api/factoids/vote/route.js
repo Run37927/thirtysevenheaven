@@ -6,7 +6,7 @@ export async function PATCH(req) {
     const session = await getAuthSession();
 
     if (session === null) {
-        return new Response('Unauthorized', { status: 401 });
+        return new Response('🙏🏼Please login to vote', { status: 401 });
     }
 
     try {
