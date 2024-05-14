@@ -13,20 +13,22 @@ const websiteIntro = {
 function Sidebar({ session, factoidCount }) {
     return (
         <div className="mb-4 md:mb-0 md:w-1/3 md:ml-4 md:sticky top-16 space-y-4">
-            <div className="bg-white shadow-sm rounded-lg p-4 border border-zinc-100">
+            <div className="bg-white shadow-sm rounded-lg p-4 border border-zinc-200">
                 <div className="space-y-2 text-center">
                     <h3 className="text-xl font-semibold">{websiteIntro.title}</h3>
                     <p className="text-sm text-zinc-700 px-6">{websiteIntro.description}</p>
                 </div>
 
-                <div className="flex flex-col items-center py-6">
+                <div className='w-full h-px bg-zinc-200 mt-4' />
+
+                <div className="flex flex-col items-center py-4">
                     <p className="font-semibold text-zinc-500">COLLECTIONS</p>
                     <p className="font-semibold text-3xl">{factoidCount}</p>
                 </div>
 
                 <div className="space-y-2">
                     <Link href={session?.user ? '/submit' : '/sign-in'} className={cn(buttonVariants({
-                        size: "sm", variant: "ghost"
+                        size: "sm", variant: "default"
                     }), "flex items-center justify-center gap-2 px-4 border border-zinc-200")}>
                         <Plus className='h-4 w-4' />
                         <span>Submit a 37 factoid</span>
@@ -43,7 +45,7 @@ function Sidebar({ session, factoidCount }) {
                 </div>
             </div>
 
-            <div className="bg-white shadow-sm rounded-lg p-4 border border-zinc-100">
+            <div className="bg-white shadow-sm rounded-lg p-4 border border-zinc-200">
                 <div className="flex items-center justify-between">
                     <p className="text-lg font-semibold">Browse categories</p>
                 </div>
@@ -55,6 +57,13 @@ function Sidebar({ session, factoidCount }) {
                     ))}
                 </div>
             </div>
+
+            <div className='px-2'>
+                <p className="text-sm text-zinc-600 mt-4 text-center">
+                    Some factoids seeded from the amazing collection at <a href="http://www.thirty-seven.org/" target="_blank" className="underline text-blue-600">thirty-seven.org</a>. Help us grow by contributing your own 37 factoids!
+                </p>
+            </div>
+
         </div>
     )
 }
