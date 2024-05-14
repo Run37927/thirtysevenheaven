@@ -24,11 +24,13 @@ export default async function Home() {
     },
   })
 
+  const factoidCount = await prisma.factoid.count();
+
   if (!initialCards.length) return notFound();
 
   return (
     <MaxWidthWrapper className="mb-12 mt-8 flex flex-col md:flex-row-reverse md:items-start md:justify-center">
-      <Sidebar session={session} className="order-1 md:order-2" />
+      <Sidebar session={session} factoidCount={factoidCount} className="order-1 md:order-2" />
       <InfiniteCards initialCards={initialCards} className="order-2 md:order-1" />
     </MaxWidthWrapper>
   );

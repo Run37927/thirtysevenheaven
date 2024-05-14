@@ -3,25 +3,25 @@ import React from 'react'
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
-import { ChevronDown, Plus, Shuffle } from 'lucide-react';
+import { Plus, Shuffle } from 'lucide-react';
 
 const websiteIntro = {
     title: '37 Heaven',
     description: 'A crowdsourced collection for the number 37 enthusiasts.'
 };
 
-function Sidebar({ session }) {
+function Sidebar({ session, factoidCount }) {
     return (
         <div className="mb-4 md:mb-0 md:w-1/3 md:ml-4 md:sticky top-16 space-y-4">
             <div className="bg-white shadow-sm rounded-lg p-4 border border-zinc-100">
                 <div className="space-y-2 text-center">
                     <h3 className="text-xl font-semibold">{websiteIntro.title}</h3>
-                    <p className="text-sm text-zinc-700">{websiteIntro.description}</p>
+                    <p className="text-sm text-zinc-700 px-6">{websiteIntro.description}</p>
                 </div>
 
                 <div className="flex flex-col items-center py-6">
                     <p className="font-semibold text-zinc-500">COLLECTIONS</p>
-                    <p className="font-semibold text-3xl">0</p>
+                    <p className="font-semibold text-3xl">{factoidCount}</p>
                 </div>
 
                 <div className="space-y-2">
@@ -46,7 +46,6 @@ function Sidebar({ session }) {
             <div className="bg-white shadow-sm rounded-lg p-4 border border-zinc-100">
                 <div className="flex items-center justify-between">
                     <p className="text-lg font-semibold">Browse categories</p>
-                    {/* <ChevronDown className='h-4 w-4' /> */}
                 </div>
                 <div className="flex flex-wrap gap-2 mt-4">
                     {categories.map((category, index) => (
