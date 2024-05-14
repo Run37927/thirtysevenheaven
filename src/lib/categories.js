@@ -8,11 +8,7 @@ export const categories = [
     { value: "Personal", label: "Personal" },
     { value: "Numerical", label: "Numerical" },
     { value: "Movies", label: "Movies" },
-    { value: "Comics", label: "Comics" },
     { value: "Media", label: "Media" },
-    { value: "Pictures", label: "Pictures" },
-    { value: "Sounds", label: "Sounds" },
-    { value: "Links", label: "Links" },
     { value: "Multiples", label: "Multiples" },
     { value: "37th things", label: "37th things" },
 ];

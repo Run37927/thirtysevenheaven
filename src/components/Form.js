@@ -43,6 +43,7 @@ function Form() {
                 //TODO: uncomment this after building out the detail page
                 // router.replace(`/factoids/${postId}`);
                 router.replace('/')
+                router.refresh();
                 toast({
                     variant: 'success',
                     title: "Your factoid has been submitted!",
@@ -120,11 +121,11 @@ function Form() {
                     <button
                         type="submit"
                         disabled={isPending}
-                        className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm font-medium text-white bg-zinc-800 hover:bg-zinc-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-500"
+                        className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm font-medium text-lg text-white bg-zinc-800 hover:bg-zinc-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-zinc-500"
                     >
                         {isPending ? <div className='flex items-center justify-center'>
                             <Loader2 className='h-5 w-5 animate-spin text-center' />
-                            <p className='text-xl'>Submitting...</p>
+                            <p>Submitting...</p>
                         </div>
                             : 'Submit'
                         }

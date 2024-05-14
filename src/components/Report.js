@@ -4,6 +4,7 @@ import axios from 'axios';
 import { CircleX, Flag, Loader2 } from 'lucide-react';
 import React, { useEffect, useState } from 'react'
 import TextareaAutosize from 'react-textarea-autosize';
+import { IoIosFlag } from "react-icons/io";
 
 function Report() {
     const [reason, setReason] = useState("");
@@ -20,7 +21,7 @@ function Report() {
         onSuccess: () => {
             setReason("");
             setShowReportModal(false);
-            // add toast here
+            //TODO: add toast here
         },
         onError: (error) => {
             console.error("Error: ", error);
@@ -80,10 +81,11 @@ function Report() {
     }
 
     return (
-        <div
-            className="flex items-center justify-center gap-1">
-            <Flag className='h-5 w-5 text-red-500' />
-            <p className='text-red-500 cursor-pointer hover:opacity-75' onClick={() => setShowReportModal(!showReportModal)}>Report</p>
+        <div>
+            <div className="flex items-center justify-center gap-1 cursor-pointer text-red-500 hover:text-red-600" onClick={() => setShowReportModal(!showReportModal)}>
+                <IoIosFlag className='h-4 w-4' />
+                <p>Report</p>
+            </div>
             {showReportModal && reportModal()}
         </div>
     )

@@ -21,7 +21,7 @@ function Sidebar({ session }) {
 
                 <div className="flex flex-col items-center py-6">
                     <p className="font-semibold text-zinc-500">COLLECTIONS</p>
-                    <p className="font-semibold text-3xl">47,384</p>
+                    <p className="font-semibold text-3xl">0</p>
                 </div>
 
                 <div className="space-y-2">

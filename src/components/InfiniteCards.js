@@ -3,10 +3,11 @@ import { formatTimeToNow } from '@/lib/utils';
 import { useIntersection } from '@mantine/hooks';
 import { useInfiniteQuery } from '@tanstack/react-query';
 import axios from 'axios';
-import { Flag, Heart, Loader2, Share2 } from 'lucide-react';
+import { Loader2 } from 'lucide-react';
 import React, { useEffect } from 'react'
 import Report from './Report';
 import { FaHeart } from "react-icons/fa";
+import { FaShare } from "react-icons/fa";
 
 function InfiniteCards({ initialCards }) {
     const { ref, entry } = useIntersection({
@@ -39,69 +40,13 @@ function InfiniteCards({ initialCards }) {
     return (
         <div className="flex flex-col md:w-2/3 space-y-4">
             {factoidCards.map((factoid, index) => {
-                if (index === factoidCards.length - 1) {
-                    return (
-                        <React.Fragment key={factoid.id}>
-                            <div ref={ref} className="bg-white shadow-sm rounded-lg px-6 py-8 border border-zinc-100">
-                                <p className="font-semibold text-xl">{factoid.description}</p>
-                                <p className="mt-6">{factoid.note}</p>
-                                <div className="flex items-center space-x-2 text-xs mt-8">
-                                    {/* <span className="font-semibold">- {factoid.author.name}</span> */}
-                                    <span className="font-semibold">- Tom Magliery</span>
-                                    <span>•</span>
-                                    <span>{formatTimeToNow(new Date(factoid.createdAt))}</span>
-                                </div>
-
-                                <div className='overflow-x-auto'>
-                                    <div className="flex gap-3">
-                                        {factoid.categories.map(item => {
-                                            return (
-                                                <div key={item.id} className='cursor-pointer bg-gray-200 hover:opacity-75 rounded-lg mb-2 mt-4 py-1 px-3 inline-block whitespace-nowrap'>
-                                                    <p className='text-xs'>{item.name}</p>
-                                                </div>
-                                            )
-                                        })}
-                                    </div>
-                                </div>
-
-                                <div className="flex items-center justify-between mt-2">
-                                    <div
-                                        className="cursor-pointer flex items-center justify-center gap-1">
-                                        <FaHeart className='h-5 w-5 text-red-500 hover:scale-125 hover:rotate-6 transition-transform duration-200' />
-                                        <p>1</p>
-                                    </div>
-
-                                    <div className="flex items-center justify-center gap-5">
-                                        <div
-                                            className="cursor-pointer flex items-center justify-center gap-1 text-zinc-600 hover:opacity-75">
-                                            <Share2 className='h-5 w-5' />
-                                            <p>Share</p>
-                                        </div>
-
-                                        <Report />
-                                    </div>
-                                </div>
-                            </div>
-                            {isFetchingNextPage && (
-                                <div className="flex">
-                                    <Loader2 className='h=10 w-10 animate-spin text-center mx-auto' />
-                                </div>
-                            )}
-                        </React.Fragment>
-                    )
-                } else {
-                    return (
-                        <div key={factoid.id} className="bg-white shadow-sm rounded-lg px-6 py-8 border border-zinc-100">
-                            {index === 0 && (
-                                <div className="bg-zinc-900 text-white rounded-lg px-2 py-1 text-xs text-center font-bold max-w-32 mb-2">
-                                    factoid of the day
-                                </div>
-                            )}
+                return (
+                    <React.Fragment key={factoid.id}>
+                        <div ref={ref} className="bg-white shadow-sm rounded-lg px-6 py-8 border border-zinc-100">
                             <p className="font-semibold text-xl">{factoid.description}</p>
                             <p className="mt-6">{factoid.note}</p>
                             <div className="flex items-center space-x-2 text-xs mt-8">
-                                {/* <span className="font-semibold">- {factoid.author.name}</span> */}
-                                <span className="font-semibold">- Tom Magliery</span>
+                                <span className="font-semibold">- {factoid.author.username || factoid.author.name}</span>
                                 <span>•</span>
                                 <span>{formatTimeToNow(new Date(factoid.createdAt))}</span>
                             </div>
@@ -121,14 +66,14 @@ function InfiniteCards({ initialCards }) {
                             <div className="flex items-center justify-between mt-2">
                                 <div
                                     className="cursor-pointer flex items-center justify-center gap-1">
-                                    <Heart className='h-5 w-5 hover:text-red-500' />
+                                    <FaHeart className='h-5 w-5 text-red-500 hover:scale-125 hover:rotate-6 transition-transform duration-200' />
                                     <p>1</p>
                                 </div>
 
                                 <div className="flex items-center justify-center gap-5">
                                     <div
-                                        className="cursor-pointer flex items-center justify-center gap-1 text-zinc-600 hover:opacity-75">
-                                        <Share2 className='h-5 w-5' />
+                                        className="cursor-pointer flex items-center justify-center gap-1 text-zinc-600/75 hover:text-zinc-700">
+                                        <FaShare className='h-4 w-4' />
                                         <p>Share</p>
                                     </div>
 
@@ -136,8 +81,13 @@ function InfiniteCards({ initialCards }) {
                                 </div>
                             </div>
                         </div>
-                    )
-                }
+                        {isFetchingNextPage && (
+                            <div className="flex">
+                                <Loader2 className='h=10 w-10 animate-spin text-center mx-auto' />
+                            </div>
+                        )}
+                    </React.Fragment>
+                )
             })}
             {!isFetchingNextPage && (
                 <div className="text-center py-4">
