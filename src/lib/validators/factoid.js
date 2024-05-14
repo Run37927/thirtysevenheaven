@@ -5,3 +5,7 @@ export const FactoidValidator = z.object({
     explanation: z.string().min(4, { message: "explanation must be at least 4 characters" }),
     categories: z.array(z.string()),
 })
+
+export const VoteValidator = z.object({
+    factoidId: z.string(),
+})
