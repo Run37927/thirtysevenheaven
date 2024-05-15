@@ -95,7 +95,7 @@ function FactoidCard({ factoid }) {
                         <p>Share</p>
                     </div>
 
-                    <Report />
+                    <Report factoidId={factoid.id} />
                 </div>
             </div>
         </div>

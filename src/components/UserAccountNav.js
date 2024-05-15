@@ -58,13 +58,13 @@ function UserAccountNav({ session }) {
                             </Link>
                         </div>
 
-                        {session.user.role === 'admin' ? (
+                        {/* {session.user.role === 'admin' ? (
                             <div className='hover:bg-gray-100 rounded-md px-4 py-2'>
                                 <div className='flex items-center'>
                                     <LineChart className='h-4 w-4 mr-2' />
                                     <p className='text-sm'>Analytics</p>
                                 </div>
-                            </div>) : null}
+                            </div>) : null} */}
 
                         <div className='hover:bg-gray-100 rounded-md px-4 py-2' onClick={() => signOut()}>
                             <div className='flex items-center'>
