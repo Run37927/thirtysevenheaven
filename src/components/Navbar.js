@@ -22,14 +22,13 @@ async function Navbar() {
                             <Image src='/tsheaven.png' alt='37heaven logo' width={30} height={30} />
                             <span>Heaven</span>
                         </Link>
-                        <Link href={session?.user ? '/submit' : 'sign-in'} className={cn(buttonVariants({ size: "sm", variant: "ghost" }), "ml-2 text-zinc-700")}>Submit</Link>
                     </div>
 
                     {/* TODO: add mobile navbar */}
 
                     <div className='hidden items-center space-x-1.5 sm:flex'>
                         <>
-                            <div
+                            {/* <div
                                 className={cn(buttonVariants({
                                     variant: "ghost",
                                     size: "sm",
@@ -43,7 +42,13 @@ async function Navbar() {
                                     size: "sm",
                                 }), "cursor-pointer")}>
                                 <FaGithub className='h-4 w-4' />
-                            </a>
+                            </a> */}
+                            <Link
+                                href={session?.user ? '/submit' : 'sign-in'}
+                                className={cn(buttonVariants({ size: "sm", variant: "ghost" }))}
+                            >
+                                Submit
+                            </Link>
 
                             {session?.user ? (
                                 <UserAccountNav session={session} />

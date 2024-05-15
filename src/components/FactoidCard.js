@@ -3,15 +3,14 @@ import React, { useState } from 'react'
 import Report from './Report'
 import { formatTimeToNow } from '@/lib/utils';
 import { FaHeart } from "react-icons/fa";
-import { FaShare } from "react-icons/fa";
 import { FaTrashAlt } from "react-icons/fa";
 import { useMutation } from '@tanstack/react-query';
 import axios from 'axios';
 import { useToast } from './ui/use-toast';
 import { useRouter } from 'next/navigation';
+import Share from './Share';
 
 function FactoidCard({ factoid }) {
-    console.log(factoid)
     const [likeCount, setLikeCount] = useState(factoid.votes?.length ?? 0);
     const { toast } = useToast();
     const router = useRouter();
@@ -89,12 +88,7 @@ function FactoidCard({ factoid }) {
                 </div>
 
                 <div className="flex items-center justify-center gap-5">
-                    <div
-                        className="cursor-pointer flex items-center justify-center gap-1 text-zinc-600/75 hover:text-zinc-700">
-                        <FaShare className='h-4 w-4' />
-                        <p>Share</p>
-                    </div>
-
+                    <Share factoidId={factoid.id} />
                     <Report factoidId={factoid.id} />
                 </div>
             </div>

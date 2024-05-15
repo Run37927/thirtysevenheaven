@@ -1,5 +1,5 @@
 'use client'
-import { LayoutDashboard, LineChart, LogOutIcon, User } from 'lucide-react';
+import { LayoutDashboard, LogOutIcon, User } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react'
