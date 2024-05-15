@@ -1,9 +1,11 @@
-import { categories } from '@/lib/categories';
 import React from 'react'
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { Plus, Shuffle } from 'lucide-react';
+import Disclamier from './Disclamier';
+import BrowseCategories from './BrowseCategories';
+import { Icons } from './ui/Icons';
 
 const websiteIntro = {
     title: '37 Heaven',
@@ -33,7 +35,7 @@ function Sidebar({ session, factoidCount }) {
                         <Plus className='h-4 w-4' />
                         <span>Submit a 37 factoid</span>
                     </Link>
-
+                    {/* 
                     <div
                         className={cn(buttonVariants({
                             variant: "ghost",
@@ -41,29 +43,23 @@ function Sidebar({ session, factoidCount }) {
                         }), "cursor-pointer flex items-center justify-center gap-2 px-4 border border-zinc-200")}>
                         <Shuffle className='h-4 w-4' />
                         <span>I&apos;m feeling lucky</span>
-                    </div>
+                    </div> */}
+
+                    <Link
+                        href='https://twitter.com/hairunhuang'
+                        target="_blank" rel="noopener noreferrer"
+                        className={cn(buttonVariants({
+                            variant: "ghost",
+                            size: "sm",
+                        }), "cursor-pointer flex items-center justify-center gap-2 px-4 border border-zinc-200")}>
+                        <Icons.twitter />
+                        <span>Made by Run</span>
+                    </Link>
                 </div>
             </div>
 
-            <div className="bg-white shadow-sm rounded-lg p-4 border border-zinc-200">
-                <div className="flex items-center justify-between">
-                    <p className="text-lg font-semibold">Browse categories</p>
-                </div>
-                <div className="flex flex-wrap gap-2 mt-4">
-                    {categories.map((category, index) => (
-                        <div key={index} className='my-1 cursor-pointer max-w-32 rounded-lg bg-gray-200 px-2 py-1 hover:opacity-75'>
-                            <p className="text-xs text-center font-semibold text-zinc-700">{category.value}</p>
-                        </div>
-                    ))}
-                </div>
-            </div>
-
-            <div className='px-2'>
-                <p className="text-sm text-zinc-600 mt-4 text-center">
-                    Some factoids seeded from the amazing collection at <a href="http://www.thirty-seven.org/" target="_blank" className="underline text-blue-600">thirty-seven.org</a>. Help us grow by contributing your own 37 factoids!
-                </p>
-            </div>
-
+            <BrowseCategories />
+            <Disclamier />
         </div>
     )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from "next/link"
 import MaxWidthWrapper from "./MaxWidthWrapper"
-import { ArrowRight, Bell } from 'lucide-react'
+import { ArrowRight, Bell, PencilLine } from 'lucide-react'
 import { buttonVariants } from './ui/button'
 import { cn } from '@/lib/utils'
 import { getAuthSession } from '@/lib/auth'
@@ -48,6 +48,7 @@ async function Navbar() {
                                 className={cn(buttonVariants({ size: "sm", variant: "ghost" }))}
                             >
                                 Submit
+                                <PencilLine className='h-4 w-4 ml-1.5' />
                             </Link>
 
                             {session?.user ? (

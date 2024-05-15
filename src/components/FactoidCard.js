@@ -68,7 +68,7 @@ function FactoidCard({ factoid }) {
                 <div className="flex gap-3">
                     {factoid.categories.map(item => {
                         return (
-                            <div key={item.id} className='cursor-pointer bg-gray-200 hover:opacity-75 rounded-lg mb-2 mt-4 py-1 px-3 inline-block whitespace-nowrap'>
+                            <div key={item.id} className='bg-gray-200 rounded-lg mb-2 mt-4 py-1 px-3 inline-block whitespace-nowrap'>
                                 <p className='text-xs'>{item.name}</p>
                             </div>
                         )
