@@ -9,7 +9,7 @@ import FilteredCards from '@/components/FilteredCards';
 async function page({ params }) {
     const session = await getAuthSession();
 
-    const category = params.category;
+    const category = decodeURIComponent(params.category);
 
     const filteredFactoids = await prisma.factoid.findMany({
         orderBy: {
