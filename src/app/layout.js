@@ -15,6 +15,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className='light'>
+      <head>
+        <script defer src="https://analytics.us.umami.is/script.js" data-website-id="023582fe-04a1-444d-875d-37bd7c2b547c"></script>
+      </head>
       <body className={cn('min-h-screen font-sans antialiased', mulish.className)}>
         <Providers>
           <Toaster />
