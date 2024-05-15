@@ -50,13 +50,13 @@ function UserAccountNav({ session }) {
                                 <p className='text-sm'>Profile</p>
                             </Link>
                         </div>
-
+                        {/* 
                         <div className='hover:bg-gray-100 rounded-md px-4 py-2'>
                             <Link href='/dashboard' className='flex items-center '>
                                 <LayoutDashboard className='h-4 w-4 mr-2' />
                                 <p className='text-sm'>Dashboard</p>
                             </Link>
-                        </div>
+                        </div> */}
 
                         {/* {session.user.role === 'admin' ? (
                             <div className='hover:bg-gray-100 rounded-md px-4 py-2'>
