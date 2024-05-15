@@ -11,22 +11,24 @@ function BrowseCategories() {
     const pathname = usePathname();
 
     useEffect(() => {
-        // Start the progress bar just before navigation starts
-        const handleStart = () => {
-            progress.start();
-        };
+        // Conditional to prevent progress bar from starting on the homepage load
+        if (pathname.startsWith('/browse')) {
+            const handleStart = () => {
+                progress.start();
+            };
 
-        // Stop the progress bar after a slight delay when the pathname changes
-        const handleComplete = () => {
-            setTimeout(() => {
-                progress.finish();
-            }, 100);  // 100 ms delay to ensure all elements are loaded
-        };
+            // Stop the progress bar after a slight delay when the pathname changes
+            const handleComplete = () => {
+                setTimeout(() => {
+                    progress.finish();
+                }, 100);  // 100 ms delay to ensure all elements are loaded
+            };
 
-        handleStart();
-        return () => {
-            handleComplete();
-        };
+            handleStart();
+            return () => {
+                handleComplete();
+            };
+        }
     }, [pathname]);
 
     const handleCategoryClick = (category) => {
