@@ -82,5 +82,6 @@ export function constructMetadata({
       images: [image],
       creator: "@hairunhuang",
     },
+    metadataBase: new URL('https://www.37heaven.xyz')
   };
 }
