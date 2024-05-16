@@ -60,12 +60,12 @@ export function formatTimeToNow(date) {
   });
 }
 
-export function constructMetadata({ title, description, image, icons } = {}) {
-  title = title || "37 Heaven - A collection of all things 37";
-  description = description || "A crowdsourced collection for the number 37 enthusiasts.";
-  image = image || "/heaven.png";
-  icons = icons || "/favicon.ico";
-
+export function constructMetadata({
+  title = "37 Heaven - A collection of all things 37",
+  description = "A crowdsourced collection for the number 37 enthusiasts.",
+  image = "/heaven.png",
+  icons = "/favicon.ico",
+} = {}) {
   return {
     title,
     description,
