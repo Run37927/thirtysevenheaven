@@ -1,4 +1,5 @@
 import { getAuthSession } from "@/lib/auth";
+import prisma from "@/lib/db";
 import { VoteValidator } from "@/lib/validators/factoid";
 import { z } from "zod";
 
