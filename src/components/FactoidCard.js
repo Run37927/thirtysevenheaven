@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Report from './Report'
 import { formatTimeToNow } from '@/lib/utils';
 import { FaHeart } from "react-icons/fa";
@@ -7,13 +7,36 @@ import { FaTrashAlt } from "react-icons/fa";
 import { useMutation } from '@tanstack/react-query';
 import axios from 'axios';
 import { useToast } from './ui/use-toast';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import Share from './Share';
+import progress from './ui/progressBar';
 
 function FactoidCard({ factoid }) {
     const [likeCount, setLikeCount] = useState(factoid.votes?.length ?? 0);
     const { toast } = useToast();
     const router = useRouter();
+    const pathname = usePathname();
+
+    useEffect(() => {
+        if (pathname.startsWith('/factoid')) {
+            const handleStart = () => {
+                progress.start();
+            };
+
+            // Stop the progress bar after a slight delay when the pathname changes
+            const handleComplete = () => {
+                setTimeout(() => {
+                    progress.finish();
+                }, 100);  // 100 ms delay to ensure all elements are loaded
+            };
+
+            handleStart();
+            return () => {
+                handleComplete();
+            };
+        }
+    }, [pathname]);
+
 
     const { mutate: upVote } = useMutation({
         mutationFn: async () => {
@@ -55,10 +78,18 @@ function FactoidCard({ factoid }) {
     });
 
     return (
-        <div className="bg-white shadow-sm rounded-lg px-6 py-8 border border-zinc-200">
-            <p className="font-semibold text-xl">{factoid.description}</p>
+        <div className={`${pathname.includes('factoid') ? 'md:w-2/3' : ''} bg-white shadow-sm rounded-lg px-6 py-8 border border-zinc-200`}>
+            <p
+                onClick={() => {
+                    progress.start();
+                    router.push(`/factoid/${factoid.id}`)
+                }}
+                className={`font-semibold text-2xl ${!pathname.includes('factoid') ? 'hover:underline hover:underline-offset-2 hover:cursor-pointer' : ''}`}
+            >
+                {factoid.description}
+            </p>
             <p className="mt-6">{factoid.note}</p>
-            <div className="flex items-center space-x-2 text-xs mt-8">
+            <div className="flex items-center space-x-2 text-xs mt-6">
                 <span className="font-semibold">- {factoid.author.username || factoid.author.name}</span>
                 <span>•</span>
                 <span>{formatTimeToNow(new Date(factoid.createdAt))}</span>

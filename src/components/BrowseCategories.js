@@ -33,6 +33,7 @@ function BrowseCategories() {
 
     const handleCategoryClick = (category) => {
         setSelectedCategory(category);
+        progress.start();
         router.push(`/browse/${category}`);
     };
 

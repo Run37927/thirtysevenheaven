@@ -12,7 +12,7 @@ import { CheckIcon } from 'lucide-react';
 
 function Share({ factoidId }) {
     const [copied, setCopied] = useState(false);
-    const url = encodeURIComponent(`https://thirtysevenheaven.vercel.app/factoid/${factoidId}`);
+    const url = encodeURIComponent(`https://www.37heaven.xyz/factoid/${factoidId}`);
     const text = encodeURIComponent("Check out this really cool 37 factoid!");
 
     const shareLinks = {
@@ -30,7 +30,7 @@ function Share({ factoidId }) {
 
     const handleCopy = (e) => {
         e.preventDefault();
-        navigator.clipboard.writeText(`https://thirtysevenheaven.vercel.app/factoid/${factoidId}`);
+        navigator.clipboard.writeText(`https://www.37heaven.xyz/factoid/${factoidId}`);
         setCopied(true);
         setTimeout(() => {
             setCopied(false);
