@@ -11,12 +11,12 @@ function SignIn() {
                     <div className='absolute top-6 right-6'>
                         <CloseModalButton />
                     </div>
-                    <div className='flex flex-col items-center justify-center px-10 relative'>
+                    <div className='flex flex-col items-center justify-center px-1 relative'>
                         <h1 className='text-center text-3xl font-bold py-8'>Sign in to 37 Heaven</h1>
 
                         <div className='flex items-center justify-center mb-20'>
                             <p className='text-center text-xs max-w-[300px]'>
-                                By continuing, you are setting up an account if you don&apos;t have one already and agree to our <Link href='/' className='underline cursor-pointer' target="_blank" rel="noopener noreferrer">User Agreement</Link>
+                                By continuing, you are setting up an account if you don&apos;t have one already and agree to our User Agreement
                             </p>
                         </div>
 
