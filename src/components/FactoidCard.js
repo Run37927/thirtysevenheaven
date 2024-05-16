@@ -81,7 +81,6 @@ function FactoidCard({ factoid }) {
         <div className={`${pathname.includes('factoid') ? 'md:w-2/3' : ''} bg-white shadow-sm rounded-lg px-6 py-8 border border-zinc-200`}>
             <p
                 onClick={() => {
-                    progress.start();
                     router.push(`/factoid/${factoid.id}`)
                 }}
                 className={`font-semibold text-2xl ${!pathname.includes('factoid') ? 'hover:underline hover:underline-offset-2 hover:cursor-pointer' : ''}`}
