@@ -40,8 +40,6 @@ function Form() {
             console.log("data we get back on successfully submitting a post", data);
             const postId = data.id;
             if (postId) {
-                //TODO: uncomment this after building out the detail page
-                // router.replace(`/factoids/${postId}`);
                 router.replace('/')
                 router.refresh();
                 toast({

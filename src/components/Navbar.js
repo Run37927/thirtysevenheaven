@@ -1,14 +1,12 @@
 import React from 'react'
 import Link from "next/link"
 import MaxWidthWrapper from "./MaxWidthWrapper"
-import { ArrowRight, Bell, PencilLine } from 'lucide-react'
+import { ArrowRight, PencilLine } from 'lucide-react'
 import { buttonVariants } from './ui/button'
 import { cn } from '@/lib/utils'
 import { getAuthSession } from '@/lib/auth'
 import UserAccountNav from './UserAccountNav'
 import Image from 'next/image'
-import { FaGithub } from "react-icons/fa";
-import { FaBell } from "react-icons/fa6";
 
 async function Navbar() {
     const session = await getAuthSession();
@@ -24,25 +22,8 @@ async function Navbar() {
                         </Link>
                     </div>
 
-                    {/* TODO: add mobile navbar */}
-
-                    <div className='hidden items-center space-x-1.5 sm:flex'>
+                    <div className='flex items-center space-x-1.5'>
                         <>
-                            {/* <div
-                                className={cn(buttonVariants({
-                                    variant: "ghost",
-                                    size: "sm",
-                                }), "cursor-pointer")}>
-                                <FaBell className='h-4 w-4' />
-                            </div>
-
-                            <a href='https://github.com/Run37927/thirtysevenheaven' target='_blank' rel='noopener noreferrer'
-                                className={cn(buttonVariants({
-                                    variant: "ghost",
-                                    size: "sm",
-                                }), "cursor-pointer")}>
-                                <FaGithub className='h-4 w-4' />
-                            </a> */}
                             <Link
                                 href={session?.user ? '/submit' : 'sign-in'}
                                 className={cn(buttonVariants({ size: "sm", variant: "ghost" }))}
