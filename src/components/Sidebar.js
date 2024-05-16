@@ -5,7 +5,8 @@ import { buttonVariants } from "@/components/ui/button";
 import { Plus, Shuffle } from 'lucide-react';
 import Disclamier from './Disclamier';
 import BrowseCategories from './BrowseCategories';
-import { Icons } from './ui/Icons';
+import { FaDiscord } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const websiteIntro = {
     title: '37 Heaven',
@@ -35,15 +36,16 @@ function Sidebar({ session, factoidCount }) {
                         <Plus className='h-4 w-4' />
                         <span>Submit a 37 factoid</span>
                     </Link>
-                    {/* 
-                    <div
+
+                    <Link
+                        href='https://discord.com/invite/d6jK3Sr3ng'
                         className={cn(buttonVariants({
                             variant: "ghost",
                             size: "sm",
                         }), "cursor-pointer flex items-center justify-center gap-2 px-4 border border-zinc-200")}>
-                        <Shuffle className='h-4 w-4' />
-                        <span>I&apos;m feeling lucky</span>
-                    </div> */}
+                        <FaDiscord className='h-4 w-4' />
+                        <span>Join Server</span>
+                    </Link>
 
                     <Link
                         href='https://twitter.com/hairunhuang'
@@ -52,7 +54,7 @@ function Sidebar({ session, factoidCount }) {
                             variant: "ghost",
                             size: "sm",
                         }), "cursor-pointer flex items-center justify-center gap-2 px-4 border border-zinc-200")}>
-                        <Icons.twitter />
+                        <FaXTwitter className='h-4 w-4' />
                         <span>Made by Run</span>
                     </Link>
                 </div>
