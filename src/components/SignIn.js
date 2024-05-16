@@ -16,7 +16,7 @@ function SignIn() {
 
                         <div className='flex items-center justify-center mb-20'>
                             <p className='text-center text-xs max-w-[300px]'>
-                                By continuing, you are setting up an account if you don&apos;t have one already and agree to our <Link href='/user-agreement' className='underline cursor-pointer' target="_blank" rel="noopener noreferrer">User Agreement</Link>
+                                By continuing, you are setting up an account if you don&apos;t have one already and agree to our <Link href='/' className='underline cursor-pointer' target="_blank" rel="noopener noreferrer">User Agreement</Link>
                             </p>
                         </div>
 
