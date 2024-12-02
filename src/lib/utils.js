@@ -73,6 +73,8 @@ export function constructMetadata({
     openGraph: {
       title,
       description,
+      siteName: '37 Heaven',
+      url: 'https://www.37heaven.xyz',
       images: [{ url: image }]
     },
     twitter: {
@@ -82,6 +84,6 @@ export function constructMetadata({
       images: [image],
       creator: "@hairunhuang",
     },
-    metadataBase: new URL('https://www.37heaven.xyz')
+    metadataBase: [new URL('https://www.37heaven.xyz'), new URL('https://37heaven.xyz')]
   };
 }
